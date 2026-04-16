@@ -96,7 +96,7 @@
         background: var(--bg1);
         border-bottom: 1px solid var(--border);
         position: relative;
-        z-index: 200;
+        z-index: 300;
       }
 
       .header-brand {
@@ -3018,15 +3018,15 @@
           `<span>${totalFeatures.toLocaleString("fr-FR")} entités</span>`;
 
         if (fail === 0) {
-          document.getElementById("status-text").textContent = "Mouhamadou Moustapha Sarr";
+          document.getElementById("status-text").textContent = "Chargement";
           showToast(`✅ ${ok} couches chargées depuis PostGIS`, "success");
           console.log(`✅ SUCCESS`);
         } else if (ok > 0) {
-          document.getElementById("status-text").textContent = `${ok} / ${ok + fail} couches`;
+          document.getElementById("status-text").textContent = "Chargement";
           showToast(`⚠️ ${fail} couche(s) en erreur`, "error");
           console.warn(`⚠️ PARTIAL`);
         } else {
-          document.getElementById("status-text").textContent = "Erreur connexion";
+          document.getElementById("status-text").textContent = "Chargement";
           document.getElementById("status-pill").classList.remove("connected");
           showToast("❌ Impossible de contacter api.php", "error");
           console.error(`❌ FAILED`);
